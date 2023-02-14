@@ -3,7 +3,7 @@ const itemRoutes = require('./routes/item.routes')
 
 // TODO: Update this
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// const db = require('./database-mysql');
+ const db = require('./database-mysql');
 // const db = require('./database-mongo');
 
 const app = express();

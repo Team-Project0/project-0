@@ -2,7 +2,7 @@
 const selectAll = () => {};
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// const db = require("../database-mysql");
+ const db = require("../database-mysql");
 // const Item = require('../database-mongo/Item.model.js');
 
 // UNCOMMENT IF USING MYSQL WITH CALLBACKS
@@ -40,10 +40,10 @@ const selectAll = () => {};
 
 
 const getOne=(req,res)=>{
-    let sql=`SELECT * from user WHERE username=${req.username}`
+    let sql=`SELECT * from user WHERE username=${req.body.username}`
     try{
         let result=db.query(sql)
-        if(req.password===result.password){
+        if(req.body.password===result.password){
             res.status(200).send(result)
         }
         else{
