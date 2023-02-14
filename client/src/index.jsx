@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'jquery'
 import Formulaire from './components/Formulaire.jsx'
+import { Box } from '@material-ui/core'
+
 
 const App = () => {
-  const [items, setItems] = useState([])
-  useEffect(() => {
-    $.ajax({
-      url: '/api/items',
-      success: (data) => {
-        console.log(data)
-        setItems(data)
-      },
-      error: (err) => {
-        console.log('err', err)
-      },
-    })
-  }, [])
 
   return (
-    <div>
-     <Formulaire  />
+    <div >
+      <Box 
+        display="flex" 
+        width={500} height={80} 
+        alignItems="center"
+        justifyContent="center"
+        >
+          <Formulaire   />
+      </Box>
     </div>
   )
 }
