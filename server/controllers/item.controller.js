@@ -1,5 +1,5 @@
 // DELETE THIS LINE
-const selectAll = () => {};
+
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // const db = require("../database-mysql");
@@ -63,4 +63,4 @@ const createAccount=(req,res)=>{
     }
 }
 
-module.exports = {createAccount,getOne, selectAll };
+module.exports = {createAccount,getOne};
