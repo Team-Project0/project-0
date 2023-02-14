@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-import List from './components/List.jsx'
+import Formulaire from './components/Formulaire.jsx'
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -20,8 +20,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Item List</h1>
-      <List items={items} />
+     <Formulaire  />
     </div>
   )
 }
