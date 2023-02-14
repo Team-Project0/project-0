@@ -1,3 +1,4 @@
+
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom'
 // import $ from 'jquery'
@@ -28,6 +29,14 @@
 // }
 
 // ReactDOM.render(<App />, document.getElementById('app'))
+
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom'
+import $ from 'jquery'
+import Formulaire from './components/Formulaire.jsx'
+
+const App = () => {
+
 
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
@@ -67,6 +76,7 @@ const App = () => {
   }
   return (
     <div>
+
       <Login/>
       {/* <div className="nav">
         <span className="logo"
@@ -84,6 +94,9 @@ const App = () => {
       <div className="main">
         {renderView()}
       </div> */}
+
+     <Formulaire  />
+
     </div>
   )
 }

@@ -1,3 +1,4 @@
+
 .logo{
 width:8%;
 
@@ -31,3 +32,14 @@ body{
     padding: 20px 0;
     font-size: 30px;
   }
+
+#formulaire{
+    margin-left: 190%;
+    margin-top: 100%;
+}
+
+#login{
+    text-align: center;
+    text-decoration-color: white;
+    margin-left: 70px;
+}
