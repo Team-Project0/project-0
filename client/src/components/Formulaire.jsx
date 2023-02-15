@@ -20,7 +20,7 @@ const Formulaire = (props) => {
         password: password,
         // photoProfil: photoProfil,
         role: role,
-        userName: userName,
+        userName: userName,     //added to test merge
       })
       .then((res) => {
         console.log(res);
