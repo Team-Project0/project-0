@@ -9,16 +9,11 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
-const color = deepPurple[400];
-const Login = () => {
-  // let history = useHistory();
+
+const CreateProduct = () => {
   return (
     <div>
-      {/* <GlobalStyles
-                styles={{ body: { background: color } }}
-               
-            /> */}
-
+      
       <img
         class="logo"
         src="https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-logo.png"
@@ -43,14 +38,36 @@ const Login = () => {
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
-              <InputLabel>User name</InputLabel>
-              <OutlinedInput type="text" label="User name" />
+              <InputLabel>Name</InputLabel>
+              <OutlinedInput type="text" label="Name" />
             </FormControl>
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
-              <InputLabel>Password</InputLabel>
+              <InputLabel>eday</InputLabel>
+              <OutlinedInput type="text" label="eday" />
+            </FormControl>
+            <FormControl
+              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
+              variant="outlined"
+            >
+              <InputLabel>Quantity</InputLabel>
+              <OutlinedInput type="text" label="Quantity" />
+            </FormControl>
+            <FormControl
+              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
+              variant="outlined"
+            >
+              <InputLabel>Price</InputLabel>
+              <OutlinedInput type="text" label="Price" />
+            </FormControl>
+
+            <FormControl
+              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
+              variant="outlined"
+            >
+              <InputLabel>Quantity</InputLabel>
               <OutlinedInput type="Password" label="Password" />
             </FormControl>
             <Button
@@ -103,7 +120,7 @@ const Login = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default CreateProduct
