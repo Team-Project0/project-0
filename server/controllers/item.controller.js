@@ -65,4 +65,23 @@ const createAccount=(req,res)=>{
       });
 }
 
-module.exports = {createAccount,getOne};
+// const createChefAccount=(req,res)=>{
+//   const sql="INSERT INTO user (firstName,lastName,password,role,userName)VALUES ('haifa', 'gharrad', 'azerty123', 'chef', 'haifagharrad')"
+//   db.query(sql, (err, items, fields) => {
+//       if (err) {
+//         res.status(500).send(err);
+//       } else {
+//         res.status(200).send(items);
+//       }
+//     });
+// }
+const selectAllUsers = function (req, res) {
+    db.query("SELECT * FROM user ", (err, items, fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(items);
+      }
+    });
+  };
+module.exports = {createAccount,getOne,selectAllUsers};
