@@ -12,6 +12,7 @@ const Formulaire = (props) => {
   const [photoProfil, setPhotoProfil] = useState("");
   const [role, setRole] = useState("");
   const [userName, setUserName] = useState("");
+  //changeddddd
   const handleSubmit = () => {
     axios
       .post(`http://localhost:3000/api/signUp`, {
@@ -20,7 +21,7 @@ const Formulaire = (props) => {
         password: password,
         // photoProfil: photoProfil,
         role: role,
-        userName: userName,
+        userName: userName,     //added to test merge
       })
       .then((res) => {
         console.log(res);
