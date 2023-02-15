@@ -1,8 +1,8 @@
 // DELETE THIS LINE
-const selectAll = () => {};
+
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// const db = require("../database-mysql");
+const db = require("../database-mysql");
 // const Item = require('../database-mongo/Item.model.js');
 
 // UNCOMMENT IF USING MYSQL WITH CALLBACKS
@@ -37,4 +37,32 @@ const selectAll = () => {};
 //   }
 // };
 
-module.exports = { selectAll };
+
+
+const getOne=(req,res)=>{
+    let sql=`SELECT * from user WHERE username=${req.body.username}`
+    try{
+        let result=db.query(sql)
+        if(req.body.password===result.password){
+            res.status(200).send(result)
+        }
+        else{
+            res.send("Wrong Password")
+        }
+    } catch(err){
+        res.status(500).send(err)
+    }
+}
+const createAccount=(req,res)=>{
+    const sql = 'INSERT INTO user SET ?'
+    // let sql=`INSERT into user userName=${req.body.username} firstName=${req.body.firstName} lastName=${req.body.lastName} password=${req.body.password} profil-photo=${req.body.profilphoto}  `
+    db.query(sql, {...req.body}, (err, items, fields) => {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send(items);
+        }
+      });
+}
+
+module.exports = {createAccount,getOne};

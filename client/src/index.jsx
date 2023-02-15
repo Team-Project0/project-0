@@ -1,3 +1,4 @@
+
 // import React, { useEffect, useState } from 'react'
 // import ReactDOM from 'react-dom'
 // import $ from 'jquery'
@@ -29,12 +30,14 @@
 
 // ReactDOM.render(<App />, document.getElementById('app'))
 
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom'
+import $ from 'jquery'
+import Formulaire from './components/Formulaire.jsx';
 
 import Login from "./components/login.jsx";
 import List from "./components/List.jsx"
-import Tabuser from "./components/Tabuser.jsx";
+
 
 const App = () => {
   // const [view, setView] = useState('login')
@@ -50,8 +53,9 @@ const App = () => {
   // }
   return (
     <div>
-      {/* <Tabuser/> */}
-      <Login/>
+
+
+      {/* <Login/> */}
 
       {/* <div className="nav">
         <span className="logo"
@@ -67,10 +71,15 @@ const App = () => {
       </div>
 <div className="main">
         {renderView()}
+
       </div> 
      */} 
+
     </div>
   )
 }
+
+
+
 
 ReactDOM.render(<App />, document.getElementById("app"));
