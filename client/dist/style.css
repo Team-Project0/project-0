@@ -7,12 +7,23 @@ body{
   background-color:#7d69ac ;  
 }
 .rotation{
-    width: 150px;
-  height: 80px;
-  
-  background-color: yellow;
-  -ms-transform: rotate(20deg); /* IE 9 */
-  transform: rotate(20deg);
+    width: 683px;
+    height: 302px;
+    /* background-color: yellow; */
+    -ms-transform: rotate(20deg);
+    transform: rotate(37deg);
+    margin: 178px 158px;
+
+}
+/* .chocolate1{
+    margin: 117px -610px;
+    z-index: 57;
+    width: 130px;
+} */
+.chocolate2{
+    margin: 117px -1082px;
+    z-index: 57;
+    width: 130px;
 }
 
 .grid-container {
@@ -22,24 +33,28 @@ body{
       'menu main main main right right'
       'menu footer footer footer footer footer';
     gap: 10px;
-    background-color: #2196F3;
+    /* background-color: #2196F3; */
     padding: 10px;
   }
   
   .grid-container  {
-    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(255, 255, 255, 0.8);  */
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
   }
 
-#formulaire{
-    margin-left: 190%;
-    margin-top: 100%;
-}
-
+ .item4{
+    margin:-38px
+ }
+  /* #formulaire{
+    margin-left: 10%;
+    margin-top:10%; */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+/* } */
 #login{
-    text-align: center;
-    text-decoration-color: white;
-    margin-left: 70px;
+   padding: 6px 165px;
+
+
+
 }
