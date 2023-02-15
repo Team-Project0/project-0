@@ -54,13 +54,15 @@ const getOne=(req,res)=>{
     }
 }
 const createAccount=(req,res)=>{
-    let sql=`INSERT into user userName=${req.body.username} firstName=${req.body.firsName} lastName=${req.body.lastName} password=${req.body.password} profil-photo=${req.body.profilePhoto} role=false `
-    try{
-        let result=db.query(sql)
-       res.status(201).send(result)
-    } catch(err){
-        res.status(501).send(err)
-    }
+    const sql = 'INSERT INTO user SET ?'
+    // let sql=`INSERT into user userName=${req.body.username} firstName=${req.body.firstName} lastName=${req.body.lastName} password=${req.body.password} profil-photo=${req.body.profilphoto}  `
+    db.query(sql, {...req.body}, (err, items, fields) => {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send(items);
+        }
+      });
 }
 
 module.exports = {createAccount,getOne};
