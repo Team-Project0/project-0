@@ -8,6 +8,7 @@ import Formulaire from './components/Formulaire.jsx';
 import Login from "./components/login.jsx";
 import List from "./components/List.jsx"
 import Tabuser from './components/Tabuser.jsx';
+import CreateProduct from './components/CreateProduct.jsx';
 
 
 
@@ -25,7 +26,7 @@ const App = () => {
       <Login />
       <Formulaire />
       <Tabuser data={data} />
-      
+      <CreateProduct/>
       
       
     

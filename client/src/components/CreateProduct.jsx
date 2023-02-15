@@ -63,13 +63,7 @@ const CreateProduct = () => {
               <OutlinedInput type="text" label="Price" />
             </FormControl>
 
-            <FormControl
-              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
-              variant="outlined"
-            >
-              <InputLabel>Quantity</InputLabel>
-              <OutlinedInput type="Password" label="Password" />
-            </FormControl>
+           
             <Button
               sx={{
                 "&:hover": {
@@ -85,39 +79,18 @@ const CreateProduct = () => {
               }}
               id="login"
             >
-              Login
+              ADD
             </Button>
-            <Button
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#3a2774",
-                  borderColor: "#0062cc",
-                  boxShadow: "none",
-                },
-                borderRadius: 1,
-                mt: 3,
-                mb: 2,
-                bgcolor: deepPurple[400],
-                color: "#fff",
-              }}
-              id="login"
-              onClick={() => history.push("/singup")}
-            >
-              SignIn
-            </Button>
+           
           </Box>
         </div>
+        
         <div class="item4">
-          {" "}
-          <img
-            class="rotation"
-            src="https://www.milka.com/content/dam/mondelezwoop/milka/milka-chocolate.png"
-          />
-        </div>
         <img
           class="chocolate2"
           src="https://www.milka.com/content/dam/mondelezwoop/milka/chunk-2.png"
         />
+        </div>
       </div>
     </div>
   )
