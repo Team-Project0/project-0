@@ -13,22 +13,21 @@ const Formulaire = (props) => {
   const [role, setRole] = useState("");
   const [userName, setUserName] = useState("");
   const handleSubmit = () => {
-    console.log(title);
     axios
-      .post(`http://localhost:3000/api/milka/signUp`, {
+      .post(`http://localhost:3000/api/signUp`, {
         lastName: lastName,
         firstName: firstName,
         password: password,
-        photoProfil: photoProfil,
+        // photoProfil: photoProfil,
         role: role,
         userName: userName,
       })
       .then((res) => {
         console.log(res);
         setData(res);
-      }).catch = (err) => {
+      }).catch((err) => {
       console.log(err);
-    };
+    });
   };
   return (
     <div id="formulaire">
