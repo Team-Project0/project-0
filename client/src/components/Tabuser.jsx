@@ -11,7 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import CheckIcon from '@mui/icons-material/Check';
 import ToggleButton from '@mui/material/ToggleButton';
 import Paper from '@mui/material/Paper';
-const Tabuser = () => {
+const Tabuser = (props) => {
     const [selected, setSelected] = React.useState(false);
   return (
     <div>
@@ -27,14 +27,16 @@ const Tabuser = () => {
           </TableRow>
         </TableHead>
         <TableBody>
+        {props.data.map((el) => (
           
             <TableRow>
               <TableCell component="th" scope="row">
-                j
+                {el.iduser}
               </TableCell>
-              <TableCell align="right">jjj</TableCell>
-              <TableCell align="right">juu</TableCell>
-              <TableCell align="right">oo</TableCell>
+              <TableCell align="right">{el.firstName}</TableCell>
+              <TableCell align="right">{el.lastName}</TableCell>
+              <TableCell align="right">{el.role}</TableCell>
+              <TableCell align="right">{el.userName}</TableCell>
               <TableCell align="right"><ToggleButton
   value="check"
   selected={selected}
@@ -45,7 +47,7 @@ const Tabuser = () => {
   <CheckIcon />
 </ToggleButton></TableCell>
             </TableRow>
-         
+          ))}
         </TableBody>
       </Table>
     </TableContainer>
