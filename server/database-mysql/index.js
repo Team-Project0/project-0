@@ -7,10 +7,10 @@ const connection = mysql
     password: "user",
     database: "mydb",
   })
-  .promise();
-connection
-  .connect()
-  .then(() => console.log("db connected"))
-  .catch((err) => console.log(err));
+  
 
+  connection.connect((err)=>{
+    if (err) throw err
+    else console.log("Sql Connected BOY!");
+  })
 module.exports = connection;

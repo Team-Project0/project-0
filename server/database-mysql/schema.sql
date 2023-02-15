@@ -33,12 +33,12 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table `mydb`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`user` (
-  `iduser` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NULL DEFAULT NULL,
-  `lastName` VARCHAR(45) NULL DEFAULT NULL,
-  `password` VARCHAR(45) NULL DEFAULT NULL,
-  `profil-photo` VARCHAR(255) NULL DEFAULT NULL,
-  `role` VARCHAR(45) NULL DEFAULT NULL,
+  `iduser` INT NOT NULL,
+  `firstName` VARCHAR(45) NULL,
+  `lastName` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `profil-photo` VARCHAR(255) NULL,
+  `role` VARCHAR(45) NULL,
   `userName` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`iduser`),
   UNIQUE INDEX `userName_UNIQUE` (`userName` ASC) VISIBLE)

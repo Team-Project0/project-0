@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from "react-dom";
 import { Line } from 'react-chartjs-2'
  import { Bar } from 'react-chartjs-2';
 import {
@@ -59,5 +58,5 @@ const ChartSales = () => {
 
 export default ChartSales
 
-   ReactDOM.render(<ChartSales/>, document.getElementById("app"));
+   
 

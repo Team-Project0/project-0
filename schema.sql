@@ -19,7 +19,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`user` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NULL,
+  `firstName` VARCHAR(45) NULL ,
   `lastName` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,
   `profil-photo` VARCHAR(255) NULL,
