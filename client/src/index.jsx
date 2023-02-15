@@ -38,22 +38,25 @@ import Formulaire from './components/Formulaire.jsx';
 import Login from "./components/login.jsx";
 import List from "./components/List.jsx"
 
+
 const App = () => {
-  const [view, setView] = useState('pokedex')
-  const changeView = (option) => {
-    setView(option)
-  }
-  const renderView = () => {
-    if (view === "pokedex") {
-      return <Login />;
-    } else if(view === "pokedexx") {
-      return <List/>;
-    }
-  }
+  // const [view, setView] = useState('login')
+  // const changeView = (option) => {
+  //   setView(option)
+  // }
+  // const renderView = () => {
+  //   if (view === "login") {
+  //     return <Login />;
+  //   } else if(view === "Tabuser") {
+  //     return <Tabuser/>;
+  //   }
+  // }
   return (
     <div>
 
+
       {/* <Login/> */}
+
       {/* <div className="nav">
         <span className="logo"
           onClick={() => changeView('pokedex')}>
@@ -66,12 +69,11 @@ const App = () => {
           See all Pokemons
         </span>
       </div>
-
-      <div className="main">
+<div className="main">
         {renderView()}
-      </div> */}
 
-     <Formulaire  />
+      </div> 
+     */} 
 
     </div>
   )
