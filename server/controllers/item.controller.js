@@ -2,7 +2,7 @@
 
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// const db = require("../database-mysql");
+const db = require("../database-mysql");
 // const Item = require('../database-mongo/Item.model.js');
 
 // UNCOMMENT IF USING MYSQL WITH CALLBACKS
@@ -53,16 +53,25 @@ const getOne=(req,res)=>{
         res.status(500).send(err)
     }
 }
-const createAccount=(req,res)=>{
+const createAccount = (req, res) => {
     const sql = 'INSERT INTO user SET ?'
     // let sql=`INSERT into user userName=${req.body.username} firstName=${req.body.firstName} lastName=${req.body.lastName} password=${req.body.password} profil-photo=${req.body.profilphoto}  `
-    db.query(sql, {...req.body}, (err, items, fields) => {
+    db.query(sql, { ...req.body }, (err, items, fields) => {
         if (err) {
-          res.status(500).send(err);
+            res.status(500).send(err);
         } else {
-          res.status(200).send(items);
+            res.status(200).send(items);
         }
-      });
-}
-
-module.exports = {createAccount,getOne};
+    });
+};
+const createProduct = (req, res) => {
+  const sql = "INSERT INTO product SET ?";
+  db.query(sql, { ...req.body }, (err, items, fields) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(items);
+    }
+  });
+};
+module.exports = { createAccount, getOne, createProduct };
