@@ -9,6 +9,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 const color = deepPurple[400];
 const Login = () => {
   // let history = useHistory();
@@ -70,24 +71,26 @@ const Login = () => {
             >
               Login
             </Button>
-            <Button
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#3a2774",
-                  borderColor: "#0062cc",
-                  boxShadow: "none",
-                },
-                borderRadius: 1,
-                mt: 3,
-                mb: 2,
-                bgcolor: deepPurple[400],
-                color: "#fff",
-              }}
-              id="login"
-              onClick={() => history.push("/singup")}
-            >
-              SignIn
-            </Button>
+            <Link to="/singin">
+              <Button
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#3a2774",
+                    borderColor: "#0062cc",
+                    boxShadow: "none",
+                  },
+                  borderRadius: 1,
+                  mt: 3,
+                  mb: 2,
+                  bgcolor: deepPurple[400],
+                  color: "#fff",
+                }}
+                id="singIn"
+                // onClick={() => history.push("/singIn")}
+              >
+                SignIn
+              </Button>
+            </Link>
           </Box>
         </div>
         <div class="item4">

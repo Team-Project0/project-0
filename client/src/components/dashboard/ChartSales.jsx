@@ -1,20 +1,17 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
- import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   LineElement,
-  BarElement,
   CategoryScale,
   LinearScale,
   PointElement,
   
 } from 'chart.js';
 
-import { height } from '@mui/system';
+
 ChartJS.register(
   LineElement,
-  BarElement,
   CategoryScale,
   LinearScale,
   PointElement
@@ -51,7 +48,7 @@ const ChartSales = () => {
   return (
     <div style={{ width: "600px", height: "400px" }}>
       <Line data={data} options={options}></Line>
-      <Bar data={data} options={options}></Bar>
+ 
     </div>
   );
 }
