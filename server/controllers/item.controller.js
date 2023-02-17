@@ -78,11 +78,25 @@ const getPriceProduct = function (req, res) {
   });
 };
 
-module.exports = {
-  createAccount,
-  getOne,
-  selectAllUsers,
-  createProduct,
-  getProduct,
-  getPriceProduct,
-};
+
+    // db.query("SELECT * FROM user ", (err, items, fields) => {
+    //   if (err) {
+    //     res.status(500).send(err);
+    //   } else {
+    //     res.status(200).send(items);
+    //   }
+    // });
+  
+  const DeleteUser = function (req, res) {
+    const id=req.params.iduser
+    db.query("DELETE FROM user WHERE iduser = "+id,
+     (err,fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send("deleted");
+      }
+    });
+  }
+
+module.exports = {createAccount,getOne,selectAllUsers,createProduct,DeleteUser,getProduct, getPriceProduct};

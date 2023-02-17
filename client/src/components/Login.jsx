@@ -1,5 +1,6 @@
-import React from "react";
-// import { useHistory } from "react-router-dom";
+import React,{useState}from "react";
+
+ import {useNavigate}from 'react-router-dom';
 import { deepPurple } from "@mui/material/colors";
 import { GlobalStyles } from "@mui/styled-engine";
 import Box from "@mui/material/Box";
@@ -12,7 +13,19 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 const color = deepPurple[400];
 const Login = () => {
-  // let history = useHistory();
+  const [password, setPassword] = useState("");
+ 
+  const [userName, setUserName] = useState("");
+
+ 
+
+// const navigate=useNavigate();
+
+// const handleSubmit = ()=> {
+
+// navigate('/dashboard');
+
+// };
   return (
     <div>
       {/* <GlobalStyles
@@ -45,15 +58,37 @@ const Login = () => {
               variant="outlined"
             >
               <InputLabel>User name</InputLabel>
-              <OutlinedInput type="text" label="User name" />
+              <OutlinedInput type="text" label="User name" onChange={(e)=>setUserName(e.target.value)} />
             </FormControl>
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
               <InputLabel>Password</InputLabel>
-              <OutlinedInput type="Password" label="Password" />
+              <OutlinedInput type="Password" label="Password" onChange={(e)=>setPassword(e.target.value)} />
             </FormControl>
+            <Link to="/dashboard">
+            <Button
+              sx={{
+                "&:hover": {
+                  backgroundColor: "#3a2774",
+                  borderColor: "#0062cc",
+                  boxShadow: "none",
+                },
+                borderRadius: 1,
+                mt: 3,
+                mb: 2,
+                bgcolor: deepPurple[400],
+                color: "#fff",
+              }}
+              id="login"
+              // onClick={()=>{handleSubmit()}}
+              
+            >
+              Login
+            </Button>
+            </Link>
+            <Link to="/singin">
             <Button
               sx={{
                 "&:hover": {
@@ -69,27 +104,8 @@ const Login = () => {
               }}
               id="login"
             >
-              Login
+              SignIn
             </Button>
-            <Link to="/singin">
-              <Button
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#3a2774",
-                    borderColor: "#0062cc",
-                    boxShadow: "none",
-                  },
-                  borderRadius: 1,
-                  mt: 3,
-                  mb: 2,
-                  bgcolor: deepPurple[400],
-                  color: "#fff",
-                }}
-                id="singIn"
-                // onClick={() => history.push("/singIn")}
-              >
-                SignIn
-              </Button>
             </Link>
           </Box>
         </div>
