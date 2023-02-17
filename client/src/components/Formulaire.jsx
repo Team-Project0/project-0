@@ -4,6 +4,7 @@ import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Formulaire = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -117,7 +118,7 @@ const Formulaire = (props) => {
         Photo
         <input hidden accept="image/*" multiple type="file" onChange={(e)=>setPhotoProfil(e.target.value)} />
       </Button>
-
+<Link to="/">
       <Button
         id="login"
         sx={{
@@ -132,6 +133,7 @@ const Formulaire = (props) => {
       >
         Sign in
       </Button>
+      </Link>
     </div>
   );
 };

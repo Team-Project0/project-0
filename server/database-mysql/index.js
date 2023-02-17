@@ -7,7 +7,8 @@ const connection = mysql
     password: "haifa",
     database: "mydb",
   })
-  ;
+  
+
   connection.connect((err)=>{
     if (err) throw err
     else console.log("Sql Connected BOY!");

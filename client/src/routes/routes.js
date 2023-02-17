@@ -27,26 +27,26 @@
 
 //   </BrowserRouter>
 // );
-import React, { Fragment } from "react";
-import { Route, Switch } from "react-router-dom";
+// import React, { Fragment } from "react";
+// import { Route, Switch } from "react-router-dom";
 
-// import AllPosts from "../components/AllPosts";
-// import CreatePost from "../components/CreatePost";
-// import OnePost from "../components/OnePost";
-import Login from "../components/login.jsx";
-import Formulaire from "../components/Formulaire.jsx"
-import Tabuser from "../components/Tabuser.jsx"
-const Routes = () => {
-  return (
-    <Fragment>
-      <Switch>
-        <Route path="/singup" component={Formulaire} exact />
-        <Route path="/posts" component={AllPosts} exact />
-        {/* 
-        <Route path="/posts/:postId" component={OnePost} exact /> */}
-      </Switch>
-    </Fragment>
-  );
-};
+// // import AllPosts from "../components/AllPosts";
+// // import CreatePost from "../components/CreatePost";
+// // import OnePost from "../components/OnePost";
+// import Login from "../components/login.jsx";
+// import Formulaire from "../components/Formulaire.jsx"
+// import Tabuser from "../components/Tabuser.jsx"
+// const Routes = () => {
+//   return (
+//     <Fragment>
+//       <Switch>
+//         <Route path="/singup" component={Formulaire} exact />
+//         <Route path="/posts" component={AllPosts} exact />
+//         {/* 
+//         <Route path="/posts/:postId" component={OnePost} exact /> */}
+//       </Switch>
+//     </Fragment>
+//   );
+// };
 
-export default Routes;
+// export default Routes;
