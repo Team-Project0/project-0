@@ -15,7 +15,8 @@ const ProductDetails = (props) => {
               padding:10,
               width:50
             }}
-          ><div  class="grid-container1">
+          >
+            <div  class="grid-container1">
              <div class="grid-item1"><p class="name">{ props.item.name }</p></div>
              <div class="grid-item1"><p class="quantity">{ props.item.quantity }</p></div>
            </div>
