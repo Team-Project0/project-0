@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb3 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
@@ -19,15 +19,19 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`user` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NULL ,
-  `lastName` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
-  `profil-photo` VARCHAR(255) NULL,
-  `role` VARCHAR(45) NULL,
-  `userName` VARCHAR(45) NOT NULL,
+  `e_mail` VARCHAR(45) NULL DEFAULT NULL,
+  `firstName` VARCHAR(45) NULL DEFAULT NULL,
+  `lastName` VARCHAR(45) NULL DEFAULT NULL,
+  `password` VARCHAR(512) NULL DEFAULT NULL,
+  `profil_photo` VARCHAR(255) NULL DEFAULT NULL,
+  `role` VARCHAR(45) NULL DEFAULT NULL,
+  `userName` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`iduser`),
-  UNIQUE INDEX `userName_UNIQUE` (`userName` ASC) VISIBLE)
-ENGINE = InnoDB;
+  UNIQUE INDEX `userName_UNIQUE` (`userName` ASC) VISIBLE,
+  UNIQUE INDEX `e-mail_UNIQUE` (`e_mail` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 144
+DEFAULT CHARACTER SET = utf8mb3;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
