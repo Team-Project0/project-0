@@ -95,4 +95,24 @@ const selectAllUsers = function (req, res) {
       }
     });
   };
-module.exports = {createAccount,getOne,selectAllUsers,createProduct};
+  const DeleteUser = function (req, res) {
+    const id=req.params.iduser
+    db.query("DELETE FROM user WHERE iduser = "+id,
+     (err,fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send("deleted");
+      }
+    });
+  }
+  const getProduct = function (req, res) {
+    db.query("SELECT * FROM product ", (err, items, fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(items);
+      }
+    });
+  };
+module.exports = {createAccount,getOne,selectAllUsers,createProduct,DeleteUser,getProduct};
