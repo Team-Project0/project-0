@@ -2,11 +2,18 @@
 
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
- import {BrowserRouter,Routes,Route} from 'react-router-dom'
-
 import Formulaire from './components/Formulaire.jsx';
 
 import Login from "./components/login.jsx";
+
+import ChartSales from './components/dashboard/ChartSales.jsx';
+import { BrowserRouter ,Route,Routes } from 'react-router-dom';
+import RoutesComp from './routes/RoutesComp.js';
+import ChartBar from './components/dashboard/ChartBar.jsx';
+import DoughnutChart from './components/dashboard/DoughnutChart.jsx';
+
+import ChartLine from './components/dashboard/ChartLine.jsx';
+import BarChart from './components/dashboard/BarChart.jsx';
 
 import Tabuser from "./components/Tabuser.jsx";
 import CreateProduct from './components/CreateProduct.jsx';
@@ -62,18 +69,17 @@ useEffect(() => {
 
       </Routes>
     {/* <Tabuser  data={data}/> */}
-<ListProduct items={items}/>
+      <ListProduct items={items} />
+      <DoughnutChart/>
 
     </div>
-  )
+  );
 }
-
-
-
-
 ReactDOM.render(
- <BrowserRouter>
-  <App />
- </BrowserRouter>
-, document.getElementById("app"));
-//  ReactDOM.render(<App/> , document.getElementById("app"));
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("app")
+);
+ // ReactDOM.render(<DoughnutChart/>, document.getElementById("app"));
+ //ReactDOM.render(<ChartSales />, document.getElementById("app"));
