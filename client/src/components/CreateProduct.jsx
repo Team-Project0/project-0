@@ -1,7 +1,8 @@
-import React from "react";
-// import { useHistory } from "react-router-dom";
+
+import axios from "axios";
+import React, { useState } from "react";
 import { deepPurple } from "@mui/material/colors";
-import { GlobalStyles } from "@mui/styled-engine";
+import {GlobalStyles } from "@mui/styled-engine";
 import Box from "@mui/material/Box";
 import { ImageList } from "@mui/material";
 import { sizing } from "@mui/system";
@@ -11,6 +12,16 @@ import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 
 const CreateProduct = () => {
+    const [name, setName] = useState("");
+  const [eday, setEday] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
+  const handleSubmit=()=>{
+    axios.post("http://localhost:3000/api/createProduct",{name,eday,quantity,price}).then(
+    (res)=>{console.log(res)})
+    .catch((err)=>{console.log(err)})   
+}
+
   return (
     <div>
       
@@ -29,7 +40,7 @@ const CreateProduct = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              bgcolor: "background.default",
+              bgcolor: "#ede7f6",
               borderRadius: 1,
               padding: 4,
             }}
@@ -39,37 +50,31 @@ const CreateProduct = () => {
               variant="outlined"
             >
               <InputLabel>Name</InputLabel>
-              <OutlinedInput type="text" label="Name" />
+              <OutlinedInput type="text" label="Name"onChange={(e)=>setName(e.target.value)} />
             </FormControl>
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
               <InputLabel>eday</InputLabel>
-              <OutlinedInput type="text" label="eday" />
+              <OutlinedInput type="text" label="eday" onChange={(e)=>setEday(e.target.value)} />
             </FormControl>
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
               <InputLabel>Quantity</InputLabel>
-              <OutlinedInput type="text" label="Quantity" />
+              <OutlinedInput type="text" label="Quantity"onChange={(e)=>setQuantity(e.target.value)}  />
             </FormControl>
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
               <InputLabel>Price</InputLabel>
-              <OutlinedInput type="text" label="Price" />
+              <OutlinedInput type="text" label="Price" onChange={(e)=>setPrice(e.target.value)}/>
             </FormControl>
 
-            <FormControl
-              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
-              variant="outlined"
-            >
-              <InputLabel>Quantity</InputLabel>
-              <OutlinedInput type="Password" label="Password" />
-            </FormControl>
+           
             <Button
               sx={{
                 "&:hover": {
@@ -84,40 +89,15 @@ const CreateProduct = () => {
                 color: "#fff",
               }}
               id="login"
+              onClick={()=>handleSubmit()}
             >
-              Login
+              ADD
             </Button>
-            <Button
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#3a2774",
-                  borderColor: "#0062cc",
-                  boxShadow: "none",
-                },
-                borderRadius: 1,
-                mt: 3,
-                mb: 2,
-                bgcolor: deepPurple[400],
-                color: "#fff",
-              }}
-              id="login"
-              onClick={() => history.push("/singup")}
-            >
-              SignIn
-            </Button>
+           
           </Box>
         </div>
-        <div class="item4">
-          {" "}
-          <img
-            class="rotation"
-            src="https://www.milka.com/content/dam/mondelezwoop/milka/milka-chocolate.png"
-          />
-        </div>
-        <img
-          class="chocolate2"
-          src="https://www.milka.com/content/dam/mondelezwoop/milka/chunk-2.png"
-        />
+        
+        
       </div>
     </div>
   )
