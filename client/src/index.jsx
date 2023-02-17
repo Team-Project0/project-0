@@ -1,83 +1,85 @@
 
-// import React, { useEffect, useState } from 'react'
-// import ReactDOM from 'react-dom'
-// import $ from 'jquery'
-// import List from './components/List.jsx'
-// import Login from './components/login.jsx'
-// const App = () => {
-//   const [items, setItems] = useState([])
-//   useEffect(() => {
-//     $.ajax({
-//       url: '/api/items',
-//       success: (data) => {
-//         console.log(data)
-//         setItems(data)
-//       },
-//       error: (err) => {
-//         console.log('err', err)
-//       },
-//     })
-//   }, [])
-
-//   return (
-//     <div>
-//       <h1>Item List</h1>
-//       {/* <List items={items} /> */}
-//       <Login/>
-//     </div>
-//   )
-// }
-
-// ReactDOM.render(<App />, document.getElementById('app'))
 
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'jquery'
 import Formulaire from './components/Formulaire.jsx';
 
 import Login from "./components/login.jsx";
-import List from "./components/List.jsx"
+
+import ChartSales from './components/dashboard/ChartSales.jsx';
+import { BrowserRouter ,Route,Routes } from 'react-router-dom';
+import RoutesComp from './routes/RoutesComp.js';
+import ChartBar from './components/dashboard/ChartBar.jsx';
+import DoughnutChart from './components/dashboard/DoughnutChart.jsx';
+
+import ChartLine from './components/dashboard/ChartLine.jsx';
+import BarChart from './components/dashboard/BarChart.jsx';
+
+import Tabuser from "./components/Tabuser.jsx";
+import CreateProduct from './components/CreateProduct.jsx';
+import SideBarDashboard from './components/SideBarDashboard.jsx';
+import axios from 'axios';
+
+import ListProduct from './components/ListProduct.jsx';
+
+
 
 const App = () => {
-  const [view, setView] = useState('pokedex')
-  const changeView = (option) => {
-    setView(option)
-  }
-  const renderView = () => {
-    if (view === "pokedex") {
-      return <Login />;
-    } else if(view === "pokedexx") {
-      return <List/>;
-    }
-  }
+const [data, setdata] = useState([]);
+const [items, setItems] = useState([]);
+const [user,setUser]=useState(null);
+
+useEffect(() => {
+  axios.get("http://localhost:3000/api/selectAllUsers").then((res) => {
+    setdata(res.data);
+  }).catch = (err) => {
+    console.log(err);
+  };
+}, []);
+
+
+useEffect(() => {
+  axios.get("http://localhost:3000/api/getProduct").then((res) => {
+    setItems(res.data);
+  }).catch = (err) => {
+    console.log(err);
+  };
+}, []);
+
   return (
     <div>
 
-      {/* <Login/> */}
-      {/* <div className="nav">
-        <span className="logo"
-          onClick={() => changeView('pokedex')}>
-          PokeMongoDB
-        </span>
-        <span className={view === 'pokedexx'
-          ? 'nav-selected'
-          : 'nav-unselected'}
-          onClick={() => changeView('pokedexx')}>
-          See all Pokemons
-        </span>
-      </div>
+      {/* <Login/>
+      
+      <Formulaire />
+      {/* <ChartSales /> */}
+      
+      
+      {/* <Tabuser data={data} />
+      <CreateProduct/>
+     
+      <SideBarDashboard/> */} 
+      <Routes>
+        <Route path="/" element={<Login/>}/>
 
-      <div className="main">
-        {renderView()}
-      </div> */}
+        
+<Route path='/singin' element={<Formulaire/>}/>
+<Route path='/dashboard' element={<SideBarDashboard />}/>
 
-     <Formulaire  />
+
+      </Routes>
+    {/* <Tabuser  data={data}/> */}
+      <ListProduct items={items} />
+      <DoughnutChart/>
 
     </div>
-  )
+  );
 }
-
-
-
-
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("app")
+);
+ // ReactDOM.render(<DoughnutChart/>, document.getElementById("app"));
+ //ReactDOM.render(<ChartSales />, document.getElementById("app"));
