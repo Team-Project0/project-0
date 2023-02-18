@@ -4,7 +4,9 @@ import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
-import * as Yup from "yup";
+
+import { Link } from "react-router-dom";
+
 
 const Formulaire = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,6 +15,7 @@ const Formulaire = () => {
   const [photoProfil, setPhotoProfil] = useState("");
   const [role, setRole] = useState("");
   const [userName, setUserName] = useState("");
+
   const [email, setemail] = useState("")
   const [selectedImg, setSelectedImg] = useState("");
   const [cloudImg, setcloudImg] = useState("")
@@ -222,7 +225,7 @@ const Formulaire = () => {
           }}
         />
       </Button>
-
+<Link to="/">
       <Button
         variant="contained"
         component="label"
@@ -243,6 +246,7 @@ const Formulaire = () => {
       >
         Sign up
       </Button>
+      </Link>
     </div>
   );
 };
