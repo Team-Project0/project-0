@@ -111,6 +111,12 @@ body{
 
   margin:-25px -11px;
 }
+.grid-container11 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  margin:-25px -11px;
+}
 .grid-item1 {
  
   padding: 20px;
@@ -153,19 +159,55 @@ body{
   margin: 0px 0px;
 
 }
+.grid-container-product1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* background-image:url("https://www.milka.com.pl/assets/images/Shapes/master-paper-texture_white.jpg") ; */
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin:111px -381px;
+  width: 606%;
+  
+
+}
+.notifchef{
+  background-image:url("https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-mountains-mobile.384df1a4.jpg");
+}
+.imgcow{
+  width:12%;
+  margin:0px 0px;
+
+}
 .imgtablette{
   margin: 50px 169px;
 }
 #tablets{
-  font-family: "Primary Regular";
+  font-family: "Secondary Alt Regular";
     color: #3b2774;
     font-style: normal;
     font-weight: 500;
+    font-size: 40px;
+    line-height: 42px;
+    margin:-45px 12px;
 }
 #imgtablette{
   width:96%
 }
 .list-product {
+  min-height: 350px;
+  margin: 23px 2px 17px 135px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 32px 106px 0px 50px;
+  box-shadow: 0 0 1em #80808066;
+  width: 304px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-product1 {
   min-height: 350px;
   margin: 23px 2px 17px 135px;
   list-style: none;
