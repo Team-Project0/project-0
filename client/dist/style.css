@@ -130,6 +130,10 @@ body{
 .imgm{
   width:10%
 }
+
+.imgtab{
+  width: 10%;
+}
 .quantity{
   color: #7d69ac;
   margin:-2px  79px;
@@ -186,4 +190,5 @@ body{
  
   border-radius: 30px;
   margin:74px 7px;
+
 }
