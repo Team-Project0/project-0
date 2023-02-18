@@ -60,15 +60,15 @@ const Formulaire = () => {
       });
  
   };
-  function isValidEmail(email) {
+  const isValidEmail=(email) =>{
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   }
-  function isValidPw(pw){
-   return  /^[a-zA-Z0-9!@#$%^&*]{6,20}$/.test(pw)
+   const isValidPw=(pw)=>{
+   return  /^[a-zA-Z0-9]w{6,}$/.test(pw)
   }
   const pwValid = event => {
     if (!isValidPw(event.target.value)) {
-      setErrorPw('Password too short');
+      setErrorPw('Weak password!');
     } else {
       setErrorPw(null)
     }
@@ -83,6 +83,7 @@ const Formulaire = () => {
   return (
     <div id="formulaire">
       <FormControl
+      
         sx={{
           m: 1,
           zIndex: "center",
@@ -95,6 +96,7 @@ const Formulaire = () => {
       >
         <InputLabel>E-mail</InputLabel>
         <OutlinedInput
+          rules={[{ required: true }]}
           type="e-mail"
           label="E-mail"
           onChange={(e) => {setemail(e.target.value),emailValid(e)}}
