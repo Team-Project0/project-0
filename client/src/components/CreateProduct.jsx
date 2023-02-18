@@ -2,10 +2,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { deepPurple } from "@mui/material/colors";
-import {GlobalStyles } from "@mui/styled-engine";
+// import {GlobalStyles } from "@mui/styled-engine";
 import Box from "@mui/material/Box";
-import { ImageList } from "@mui/material";
-import { sizing } from "@mui/system";
+// import { ImageList } from "@mui/material";
+// import { sizing } from "@mui/system";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";

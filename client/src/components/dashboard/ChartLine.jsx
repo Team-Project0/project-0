@@ -7,10 +7,17 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  registerables,
 } from "chart.js";
 
 import { height } from "@mui/system";
-ChartJS.register(BarElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  registerables,
+);
 
 const ChartLine = () => {
     const [chartData, setChartData] = useState({ labels: [], data: [] });
