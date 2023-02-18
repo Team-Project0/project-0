@@ -15,6 +15,22 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb3 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`ingredient`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`ingredient` (
+  `idingredient` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL DEFAULT NULL,
+  `quantity` INT NULL DEFAULT NULL,
+  `price` VARCHAR(4) NULL DEFAULT NULL,
+  `edate` DATE NULL DEFAULT NULL,
+  `image` VARCHAR(100) NULL DEFAULT NULL,
+  PRIMARY KEY (`idingredient`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 7
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
 -- Table `mydb`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`user` (
@@ -30,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user` (
   UNIQUE INDEX `userName_UNIQUE` (`userName` ASC) VISIBLE,
   UNIQUE INDEX `e-mail_UNIQUE` (`e_mail` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 144
+AUTO_INCREMENT = 151
 DEFAULT CHARACTER SET = utf8mb3;
 
 
