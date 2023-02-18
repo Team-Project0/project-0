@@ -1,10 +1,9 @@
 import React from 'react'
 import Box from "@mui/material/Box";
-const ProductDetails = (props) => {
+const Productdetailsuser = (props) => {
   return (
     <div>
-      
-       <div class="_list-product1">
+        <div class="_list-product">
        <Box
             sx={{
               marginTop: 5,
@@ -18,8 +17,8 @@ const ProductDetails = (props) => {
               width:50
             }}
           >
-            <div  class="grid-container11">
-              <img class="imgproduct"src="https://www.milka.com.pl/~/media/Project/Brands/Milka/pl/All-Products/milka-strawberry-100g/Thumbnails/pl-hd.png"></img>
+            <div  class="grid-container1">
+              
              <p class="name">{ props.item.name }</p>
            <p class="quantity">{ props.item.quantity }</p>
            </div>
@@ -30,4 +29,4 @@ const ProductDetails = (props) => {
   )
 }
 
-export default ProductDetails
+export default Productdetailsuser

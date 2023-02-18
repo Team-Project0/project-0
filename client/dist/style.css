@@ -15,17 +15,13 @@ body{
 .rotation{
     width: 683px;
     height: 302px;
-    /* background-color: yellow; */
+
     -ms-transform: rotate(20deg);
     transform: rotate(37deg);
     margin: 178px 158px;
 
 }
-/* .chocolate1{
-    margin: 117px -610px;
-    z-index: 57;
-    width: 130px;
-} */
+
 .chocolate2{
     margin: 117px -1082px;
     z-index: 57;
@@ -40,12 +36,12 @@ body{
       'menu main main main right right'
       'menu footer footer footer footer footer';
     gap: 10px;
-    /* background-color: #2196F3; */
+   
     padding: 10px;
   }
   
   .grid-container  {
-    /* background-color: rgba(255, 255, 255, 0.8);  */
+   
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
@@ -56,11 +52,7 @@ body{
  .item4{
     margin:-38px
  }
-  /* #formulaire{
-    margin-left: 10%;
-    margin-top:10%; */
-    /* background-color: rgba(255, 255, 255, 0.8); */
-/* } */
+ 
 #login{
    padding: 6px 165px;
 
@@ -86,29 +78,112 @@ body{
   border-radius: 30px;
   margin: 63px 7px;
 }
+.linkusers{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:-56px 7px;
+}
+.notif_div{
+  background-color: #d1c4e9;
+    width: 86%;
+    margin: 150px 61px;
+    padding: 14px 28px;
+}
+.linkMessages{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:74px 7px;
+}
+.linkNotif{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:-61px 7px;
+}
 .grid-container1 {
   display: grid;
   grid-template-columns: auto auto auto;
-  /* background-color: #2196F3; */
-  /* padding: 10px; */
+
   margin:-25px -11px;
 }
 .grid-item1 {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+ 
   padding: 20px;
   font-size: 30px;
-  /* text-align: center; */
+ 
+}
+.doughnut{
+  width: 10%;
 }
 .name{
-  /* margin:0px 0px ;
-  font-size:7px */
+  color: #7d69ac;
   margin: -2px -51px;
-    font-size: 16px;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: bold;
+}
+.imgm{
+  width:10%
 }
 .quantity{
-  /* margin:0px 0px ;
-  font-size:7px */
-  margin: -2px  0px;
+  color: #7d69ac;
+  margin:-2px  79px;
     font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+}
+.grid-container-product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-image:url("https://www.milka.com.pl/assets/images/Shapes/master-paper-texture_white.jpg") ;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin:46px 74px;
+  width: 100%;
+  margin: 0px 0px;
+
+}
+.imgtablette{
+  margin: 50px 169px;
+}
+#tablets{
+  font-family: "Primary Regular";
+    color: #3b2774;
+    font-style: normal;
+    font-weight: 500;
+}
+#imgtablette{
+  width:96%
+}
+.list-product {
+  min-height: 350px;
+  margin: 23px 2px 17px 135px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 32px 106px 0px 50px;
+  box-shadow: 0 0 1em #80808066;
+  width: 304px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.imgproduct{
+  
+  
+  margin: -2px -51px;
+ 
+}
+.linkProduct{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:74px 7px;
 }

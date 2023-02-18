@@ -14,22 +14,10 @@ import ToggleButton from '@mui/material/ToggleButton';
 import Paper from '@mui/material/Paper';
 import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
-
-const Tabuser = (props) => {
-    const [selected, setSelected] = React.useState(false);
-    let handleSubmit=(id)=>{ 
-      axios.delete(`http://localhost:3000/api/deleteuser/${id}`)
-      window.location.reload()
-      .then(function (res) {
-        console.log(res);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
+const Product1 = () => {
   return (
     <div>
-      <TableContainer component={Paper}>
+         <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -44,25 +32,19 @@ const Tabuser = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-        {props.data.map((el) => (
+        {/* {props.data.map((el) => ( */}
           
             <TableRow>
               <TableCell component="th" scope="row">
-                {el.iduser}
+                {/* {el.iduser} */}h
               </TableCell>
-              <TableCell align="right">{el.firstName}</TableCell>
-              <TableCell align="right">{el.lastName}</TableCell>
-              <TableCell align="right">{el.role}</TableCell>
-              <TableCell align="right">{el.userName}</TableCell>
-              <TableCell align="right"><ToggleButton
-  value="check"
-  selected={selected}
-  onChange={() => {
-    setSelected(!selected);
-  }}
->
-  <CheckIcon />
-</ToggleButton></TableCell>
+              <TableCell align="right">g</TableCell>
+              <TableCell align="right">t</TableCell>
+              <TableCell align="right">i</TableCell>
+              <TableCell align="right">i</TableCell>
+              
+  
+
 <TableCell align="right"><IconButton color="primary" aria-label="delete" size="small">
   <DeleteIcon fontSize="small"  onClick={(e)=>{handleSubmit(el.iduser)}}/>
 </IconButton></TableCell>
@@ -76,8 +58,8 @@ const Tabuser = (props) => {
             </TableRow>
 
 
-
-          ))}
+{/* 
+          ))} */}
         </TableBody>
       </Table>
     </TableContainer>
@@ -85,4 +67,4 @@ const Tabuser = (props) => {
   )
 }
 
-export default Tabuser
+export default Product1
