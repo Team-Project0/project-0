@@ -133,6 +133,25 @@ const createProduct = (req, res) => {
     }
   });
 };
+const sendNotification = (req, res) => {
+  const sql = "INSERT INTO notification SET ?";
+  db.query(sql, { ...req.body }, (err, items, fields) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(items);
+    }
+  });
+};
+const getNotification = function (req, res) {
+  db.query("SELECT * FROM notification ", (err, items, fields) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(items);
+    }
+  });
+};
 
 // const createChefAccount=(req,res)=>{
 //   const sql="INSERT INTO user (firstName,lastName,password,role,userName)VALUES ('haifa', 'gharrad', 'azerty123', 'chef', 'haifagharrad')"
@@ -195,6 +214,7 @@ const getPriceProduct = function (req, res) {
     });
   }
 
-module.exports = {createAccount,getOne,selectAllUsers,createProduct,DeleteUser,getProduct, getPriceProduct};
+
+module.exports = {createAccount,getOne,selectAllUsers,createProduct,DeleteUser,getProduct, getPriceProduct,sendNotification,getNotification};
 
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+
 import { Bar, Line } from "react-chartjs-2";
+import Box from "@mui/material/Box";
 import axios from "axios";
 import {
   Chart as ChartJS,
@@ -108,7 +110,21 @@ const ChartBar = () => {
 
   return (
     <div>
+       <Box
+            sx={{
+              marginTop:40,
+              marginLeft: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              bgcolor: "#ede7f6",
+              borderRadius: 1,
+              padding: 4,
+            }}
+          >
+           
       <Line data={config} options={options} />
+      </Box>
     </div>
   );
 };

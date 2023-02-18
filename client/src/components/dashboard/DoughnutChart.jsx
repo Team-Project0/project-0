@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Box from "@mui/material/Box";
 import {
     Chart as ChartJS,
     ArcElement,
@@ -57,11 +58,20 @@ const DoughnutChart = () => {
        {
          label: "level of price",
          data: chartData.labels,
-         backgroundColor: "aqua",
-                 borderColor: "black",
+        backgroundColor: [
+         " #b39ddb",
+        " #673ab7",
+         "#7e57c2",
+         "#d1c4e9",
+         "#ede7f6",
+         "#5e35b1",
+         "#b388ff"
+        ],
+        
+                 
                  pointBorderColor: "aqua",
                  fill: true,
-              tension: 0.4,
+              tension: 0.1,
        },
      ],
    };
@@ -79,7 +89,22 @@ const DoughnutChart = () => {
      };
   return (
     <div>
-      <Doughnut data={config} options={options}></Doughnut>
+      <Box
+            sx={{
+              marginTop: 20,
+              marginLeft: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              bgcolor: "#ede7f6",
+              borderRadius: 1,
+              padding: 4,
+              margin:"0px 0px"
+            }}
+          >
+           
+            <Doughnut data={config} options={options}></Doughnut></Box>
+      
     </div>
   );
 }

@@ -19,7 +19,8 @@ const Login = () => {
 
  
 
-// const navigate=useNavigate();
+const navigate=useNavigate();
+// window.location.reload()
 
 // const handleSubmit = ()=> {
 
@@ -67,7 +68,7 @@ const Login = () => {
               <InputLabel>Password</InputLabel>
               <OutlinedInput type="Password" label="Password" onChange={(e)=>setPassword(e.target.value)} />
             </FormControl>
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard"> */}
             <Button
               sx={{
                 "&:hover": {
@@ -82,12 +83,12 @@ const Login = () => {
                 color: "#fff",
               }}
               id="login"
-              // onClick={()=>{handleSubmit()}}
+              onClick={()=>{navigate("/dashboard")}}
               
             >
               Login
             </Button>
-            </Link>
+            {/* </Link> */}
             <Link to="/singin">
             <Button
               sx={{
