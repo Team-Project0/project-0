@@ -24,22 +24,19 @@ const NotificationChef = () => {
       .catch((err)=>{console.log(err)})   
   }
   return (
-    <div>
-    
-       
-        <Box
-            sx={{
-              marginTop: 20,
-              marginLeft: 4,
+    <div >
+   
+       {/* <img src="https://www.milka.it/-/media/Project/Brands/Milka/it/2022-2023/I00068S01BANMILKA_TAVLATTE_780x480px.png?h=480&w=780&hash=9C9F37EA476F32AD8C968E303464F2A9"/> */}
+       <img className='imgcow' src="https://www.milka.it/-/media/Project/Brands/Milka/it/Home-Page/lilac-heritage-DESK.png?h=599&w=893&hash=615C3CF7581F64324C02A737405CCC47"/>
+        <Card sx={{ maxWidth: 345,marginTop: 20,
+              marginLeft:19,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              bgcolor: "#ede7f6",
+              bgcolor:"background.default",
               borderRadius: 1,
               padding: 4,
-            }}
-          >
-        <Card sx={{ maxWidth: 345 }}>
+              boxShadow:4, }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -94,9 +91,9 @@ const NotificationChef = () => {
       {/* <img className='imgm' src="https://cdn.bmstores.co.uk/images/hpcProductImage/imgSource/377411-milka-daim-snax-145g.jpg"/> */}
     
     </Card>
-    
-  </Box>
+    {/* <img src="https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-mountains-mobile.384df1a4.jpg"/> */}
 
+    
     </div>
   )
 }
