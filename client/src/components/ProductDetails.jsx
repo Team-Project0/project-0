@@ -19,7 +19,7 @@ const ProductDetails = (props) => {
             }}
           >
             <div  class="grid-container11">
-              <img class="imgproduct"src="https://www.milka.com.pl/~/media/Project/Brands/Milka/pl/All-Products/milka-strawberry-100g/Thumbnails/pl-hd.png"></img>
+              {/* <img class="imgproduct"src="https://www.milka.com.pl/~/media/Project/Brands/Milka/pl/All-Products/milka-strawberry-100g/Thumbnails/pl-hd.png"></img> */}
              <p class="name">{ props.item.name }</p>
            <p class="quantity">{ props.item.quantity }</p>
            </div>

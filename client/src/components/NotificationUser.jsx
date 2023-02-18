@@ -48,6 +48,7 @@ const NotificationUser = (props) => {
      
     </List>
     
+    
     </div>
   )
 }
