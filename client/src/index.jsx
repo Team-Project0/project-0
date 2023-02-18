@@ -11,19 +11,18 @@ import axios from 'axios';
 
 const App = () => {
   const [data, setdata] = useState([])
-  
+  const [show,setShow]=useState(false)
+
 useEffect(()=>{
   axios.get('http://localhost:3000/api/allIngredient').then((res)=>{
   setdata(res.data[0])
   console.log(res);
   }).catch((err)=>{console.error(err)})
-},[])
+},[show])
+
   return (
     <div>
-
-  
-
-     <Ingredients data={data} />
+     <Ingredients data={data} show={show} setShow={setShow}/>
 
     </div>
   )
