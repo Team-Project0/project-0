@@ -148,6 +148,25 @@ const createProduct = (req, res) => {
     }
   });
 };
+const sendNotification = (req, res) => {
+  const sql = "INSERT INTO notification SET ?";
+  db.query(sql, { ...req.body }, (err, items, fields) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(items);
+    }
+  });
+};
+const getNotification = function (req, res) {
+  db.query("SELECT * FROM notification ", (err, items, fields) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(items);
+    }
+  });
+};
 
 
 const selectAllUsers = function (req, res) {
@@ -194,7 +213,8 @@ const getPriceProduct = function (req, res) {
     });
   }
 
+
 module.exports = {selectAllUsers,createProduct,DeleteUser,getProduct, getPriceProduct,login,createToken,
-createAccount,selectAllUsers,DeleteUser,selectAllIngredient,addIingredient,updateIngredient,deleteIngredient};
+createAccount,selectAllUsers,DeleteUser,selectAllIngredient,addIingredient,updateIngredient,deleteIngredient,sendNotification,getNotification};
 
 

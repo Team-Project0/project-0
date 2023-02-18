@@ -53,5 +53,7 @@
     "redux-form": "^8.3.9",
     "text-validator": "^0.0.3",
     "yup": "^1.0.0"
+
+
   }
 }

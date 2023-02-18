@@ -28,4 +28,10 @@ router.delete("/deleteuser/:iduser", itemController.DeleteUser);
  router.get("/selectAllUsers",itemController.selectAllUsers);
 router.get('/', middleware.authenticateToken);
 router.post('/token', itemController.createToken);
+ router.post("/sendNotification", itemController.sendNotification);
+ router.get("/getNotification", itemController.getNotification);
+
+
+ 
+
 module.exports = router;
