@@ -1,77 +1,29 @@
-
-// import React, { useEffect, useState } from 'react'
-// import ReactDOM from 'react-dom'
-// import $ from 'jquery'
-// import List from './components/List.jsx'
-// import Login from './components/login.jsx'
-// const App = () => {
-//   const [items, setItems] = useState([])
-//   useEffect(() => {
-//     $.ajax({
-//       url: '/api/items',
-//       success: (data) => {
-//         console.log(data)
-//         setItems(data)
-//       },
-//       error: (err) => {
-//         console.log('err', err)
-//       },
-//     })
-//   }, [])
-
-//   return (
-//     <div>
-//       <h1>Item List</h1>
-//       {/* <List items={items} /> */}
-//       <Login/>
-//     </div>
-//   )
-// }
-
-// ReactDOM.render(<App />, document.getElementById('app'))
-
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'jquery'
+import $, { error } from 'jquery'
 import Formulaire from './components/Formulaire.jsx';
 
 import Login from "./components/login.jsx";
 import List from "./components/List.jsx"
+import AddIngredient from './components/addIngredient.jsx';
+import Ingredients from './components/Ingredients.jsx';
+import axios from 'axios';
 
 const App = () => {
-  const [view, setView] = useState('pokedex')
-  const changeView = (option) => {
-    setView(option)
-  }
-  const renderView = () => {
-    if (view === "pokedex") {
-      return <Login />;
-    } else if(view === "pokedexx") {
-      return <List/>;
-    }
-  }
+  const [data, setdata] = useState([])
+  
+useEffect(()=>{
+  axios.get('http://localhost:3000/api/allIngredient').then((res)=>{
+  setdata(res.data[0])
+  console.log(res);
+  }).catch((err)=>{console.error(err)})
+},[])
   return (
     <div>
 
-      {/* <Login/> */}
-      {/* <div className="nav">
-        <span className="logo"
-          onClick={() => changeView('pokedex')}>
-          PokeMongoDB
-        </span>
-        <span className={view === 'pokedexx'
-          ? 'nav-selected'
-          : 'nav-unselected'}
-          onClick={() => changeView('pokedexx')}>
-          See all Pokemons
-        </span>
-      </div>
+  
 
-      <div className="main">
-        {renderView()}
-      </div> */}
-
-     <Formulaire  />
+     <Ingredients data={data} />
 
     </div>
   )

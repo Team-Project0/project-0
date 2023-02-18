@@ -1,17 +1,18 @@
 const db = require("../database-mysql");
 const bcrypt = require("bcrypt");
-//import cloudinary.js to use in the createAccount
-const cloudinary = require("../cloudinary.js");
 
 
 
-const selectAllIngredient = function (req, res) {
-  try {  db.query("SELECT * FROM ingredient")
-  res.status(200).send("done")
-  }catch(err){
-    console.error(err);
+const selectAllIngredient =  function (req, res) {
+  db.query("SELECT * FROM ingredient").then((items,err)=>{
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(items);
+    }
+  })
+    
   }
-}
 const addIingredient = function (req, res) {
   const sql = "INSERT INTO ingredient SET ?";
   try {
@@ -31,7 +32,8 @@ const updateIngredient = function (req, res) {
   } catch (err) {
     console.log(err);
   }
-};
+}
+
 const deleteIngredient = function (req, res) {
   const del = "DELETE FROM ingredient WHERE idingredient = ? ";
   try {

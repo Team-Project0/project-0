@@ -73,6 +73,7 @@ const Formulaire = () => {
       setErrorPw(null)
     }
   }
+  
   const emailValid = event => {
     if (!isValidEmail(event.target.value)) {
       setError('Email is invalid');
@@ -80,6 +81,7 @@ const Formulaire = () => {
       setError(null)
     }
   }
+  
   return (
     <div id="formulaire">
       <FormControl
