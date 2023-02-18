@@ -21,56 +21,28 @@ import SideBarDashboard from './components/SideBarDashboard.jsx';
 import axios from 'axios';
 
 import ListProduct from './components/ListProduct.jsx';
+import ChartComponent from './components/ChartComponent.jsx';
 
 
 
 const App = () => {
-const [data, setdata] = useState([]);
-const [items, setItems] = useState([]);
+
 const [user,setUser]=useState(null);
-
-useEffect(() => {
-  axios.get("http://localhost:3000/api/selectAllUsers").then((res) => {
-    setdata(res.data);
-  }).catch = (err) => {
-    console.log(err);
-  };
-}, []);
-
-
-useEffect(() => {
-  axios.get("http://localhost:3000/api/getProduct").then((res) => {
-    setItems(res.data);
-  }).catch = (err) => {
-    console.log(err);
-  };
-}, []);
 
   return (
     <div>
 
-      {/* <Login/>
-      
-      <Formulaire />
-      {/* <ChartSales /> */}
-      
-      
-      {/* <Tabuser data={data} />
-      <CreateProduct/>
-     
-      <SideBarDashboard/> */} 
       <Routes>
         <Route path="/" element={<Login/>}/>
 
         
 <Route path='/singin' element={<Formulaire/>}/>
-<Route path='/dashboard' element={<SideBarDashboard />}/>
+<Route exact path='/dashboard'  element={<SideBarDashboard />}/>
 
 
       </Routes>
-    {/* <Tabuser  data={data}/> */}
-      <ListProduct items={items} />
-      <DoughnutChart/>
+
+   
 
     </div>
   );
@@ -81,5 +53,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("app")
 );
- // ReactDOM.render(<DoughnutChart/>, document.getElementById("app"));
- //ReactDOM.render(<ChartSales />, document.getElementById("app"));
+
+

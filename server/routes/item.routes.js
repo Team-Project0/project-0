@@ -9,5 +9,9 @@ router.get("/getProduct", itemController.getProduct);
 router.get("/getPriceProduct", itemController.getPriceProduct);
 router.delete("/deleteuser/:iduser", itemController.DeleteUser);
  router.get("/selectAllUsers",itemController.selectAllUsers);
+ router.post("/sendNotification", itemController.sendNotification);
+ router.get("/getNotification", itemController.getNotification);
+
+
  
 module.exports = router;

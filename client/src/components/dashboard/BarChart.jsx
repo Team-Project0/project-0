@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Bar, Line } from "react-chartjs-2";
+import Box from "@mui/material/Box";
 import axios from "axios";
+
 import {
   Chart as ChartJS,
   BarElement,
@@ -38,16 +40,29 @@ const BarChart = () => {
          const gradienSegment = ctx.createLinearGradient(0, bottom, 0, top);
         //let border={bottom - y.getP(5)/(bottom)-top}
        
-        gradienSegment.addColorStop(0, 'red');
-        gradienSegment.addColorStop(0.5, "red");
-        gradienSegment.addColorStop(0.5, "green");
-        gradienSegment.addColorStop(1, "green");
+        gradienSegment.addColorStop(0, '#673ab7');
+        gradienSegment.addColorStop(0.5, "#d1c4e9");
+        
         return gradienSegment;
     }
 
     return(
 <div>
+<Box
+            sx={{
+              marginTop: 20,
+              marginLeft: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              bgcolor: "#ede7f6",
+              borderRadius: 1,
+              padding: 4,
+              margin:"0px 0px"
+            }}
+          >
         <Bar data={data} options={options}/>
+       </Box>
     </div>
 )};
 

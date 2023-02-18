@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import axios from "axios";
+import Box from "@mui/material/Box";
 import {
   Chart as ChartJS,
   BarElement,
@@ -66,9 +67,10 @@ const ChartLine = () => {
       {
         label: "level of price",
         data: chartData.labels,
-        backgroundColor: ["rgba(75, 192, 192, 0.6)"],
+        backgroundColor:"#673ab7",
         borderWidth: 4,
-        tension:0.4
+        tension:0.4,
+        borderColor: '#673ab7',
       },
     ],
   };
@@ -104,7 +106,20 @@ const options = {
 }
   return (
     <div>
-      <Line data={config} options={options} />
+       <Box
+            sx={{
+              marginTop:40,
+              marginLeft: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              bgcolor: "#ede7f6",
+              borderRadius: 1,
+              padding: 4,
+              margin:"0px 0px"
+            }}
+          ><Line data={config} options={options} /></Box>
+      
     </div>
   );
 };
