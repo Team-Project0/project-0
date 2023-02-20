@@ -55,26 +55,9 @@ const AddIngredient = () => {
   };
   return (
     <div>
-      <img
-        class="logo"
-        src="https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-logo.png"
-        alt="h"
-        // style={{ width:'10%', height:"10%" }}
-      />
-      <div class="grid-container">
-        <div class="item3">
-          <Box
-            sx={{
-              marginTop: 20,
-              marginLeft: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              bgcolor: "#EDE7F6",
-              borderRadius: 1,
-              padding: 4,
-            }}
-          >
+      <div className="grid-container13">
+        <div className="list-product2">
+          <div className="item3">
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
@@ -129,8 +112,8 @@ const AddIngredient = () => {
                   boxShadow: "none",
                 },
                 borderRadius: 1,
-                mt: 3,
-                mb: 2,
+                margin: "18px 5px",
+                padding: "8px 133px",
                 bgcolor: deepPurple[400],
                 color: "#fff",
               }}
@@ -155,8 +138,8 @@ const AddIngredient = () => {
                   boxShadow: "none",
                 },
                 borderRadius: 1,
-                mt: 3,
-                mb: 2,
+                margin: "18px 5px",
+                padding: "8px 133px",
                 bgcolor: deepPurple[400],
                 color: "#fff",
               }}
@@ -165,8 +148,12 @@ const AddIngredient = () => {
             >
               ADD
             </Button>
-          </Box>
+          </div>
         </div>
+        <img
+          className="cacao"
+          src="https://i.pinimg.com/236x/a4/ad/8a/a4ad8a51ef8526674099e3b0220f7d7a.jpg"
+        />
       </div>
     </div>
   );

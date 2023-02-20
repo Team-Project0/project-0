@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 
 
 const selectAllIngredient =  function (req, res) {
-  db.query("SELECT * FROM ingredient").then((items,err)=>{
+  db.promise().query("SELECT * FROM ingredient").then((items,err)=>{
     if (err) {
       res.status(500).send(err);
     } else {
@@ -63,12 +63,14 @@ const createAccount = async function (req, res) {
     console.log(req.body);
     //saving hashed password in our database
     e_mail=req.body.e_mail
-    userName=req.body.userName
+
     firstName=req.body.firstName
     lastName=req.body.lastName
     password=req.body.password
-    profilphoto=req.body.profilphoto
+    profilphoto=req.body.profil_photo
     role=req.body.role
+    userName=req.body.userName
+
       try {
           const selected = "SELECT * FROM user WHERE userName=?;"
         values = userName
@@ -79,9 +81,11 @@ const createAccount = async function (req, res) {
             res.status(409).send('user name already used');
         }
           else {
-              const add = "INSERT INTO user (e_mail,firstName,lastName,password,userName,profil_photo,role) VALUES (?,?,?,?,?,?,?);";
+
+              const add = "INSERT INTO user (e_mail,firstName,lastName,password,profil_photo,role,userName) VALUES (?,?,?,?,?,?,?);";
               const hashedPw = await bcrypt.hash(password, 10);
-              const values=[e_mail,firstName,lastName,hashedPw,userName,profilphoto ,role]
+              const values=[e_mail,firstName,lastName,hashedPw,profilphoto,role,userName]
+
              const user= await  db.promise().query(add, values)
              console.log("hope",user)
             res.status(200).send(user);
@@ -138,15 +142,26 @@ const login = async function (req, res) {
 }
 
 
-const createProduct = (req, res) => {
+
+// const createProduct = (req, res) => {
+//   const sql = "INSERT INTO product SET ?";
+//   db.query(sql, { ...req.body }, (err, items, fields) => {
+//     if (err) {
+//       res.status(500).send(err);
+//     } else {
+//       res.status(200).send(items);
+//     }
+//   });
+// };
+const createProduct = function (req, res) {
   const sql = "INSERT INTO product SET ?";
-  db.query(sql, { ...req.body }, (err, items, fields) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.status(200).send(items);
-    }
-  });
+  try {
+    db.query(sql, { ...req.body });
+    res.status(200).send("added");
+  } catch (err) {
+    console.log(err);
+  }
+
 };
 const sendNotification = (req, res) => {
   const sql = "INSERT INTO notification SET ?";
@@ -212,9 +227,34 @@ const getPriceProduct = function (req, res) {
       }
     });
   }
+  const DeleteNotif = function (req, res) {
+    const id=req.params.idnotification
+    db.query("DELETE FROM notification WHERE idnotification = "+id,
+     (err,fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send("deleted");
+      }
+    });
+  }
+  const DeleteProduct = function (req, res) {
+    const id=req.params.idProduct
+    db.query("DELETE FROM product WHERE idProduct = "+id,
+     (err,fields) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send("deleted");
+      }
+    });
+  }
 
 
 module.exports = {selectAllUsers,createProduct,DeleteUser,getProduct, getPriceProduct,login,createToken,
-createAccount,selectAllUsers,DeleteUser,selectAllIngredient,addIingredient,updateIngredient,deleteIngredient,sendNotification,getNotification};
+
+createAccount,selectAllUsers,DeleteUser,selectAllIngredient,addIingredient,updateIngredient,deleteIngredient,
+sendNotification,getNotification,DeleteNotif,DeleteProduct};
+
 
 

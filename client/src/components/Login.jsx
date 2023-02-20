@@ -1,63 +1,61 @@
 import React, { useState, useEffect } from "react";
 
- import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { deepPurple } from "@mui/material/colors";
-// import { GlobalStyles } from "@mui/styled-engine";
 import Box from "@mui/material/Box";
-// import { ImageList } from "@mui/material";
-// import { sizing } from "@mui/system";
+
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import authService from "../services/auth.js";
-// import { useEffect } from "react";
+
+import validator from "validator";
+
 const color = deepPurple[400];
 const Login = () => {
   const [password, setPassword] = useState("");
-
   const [userName, setUserName] = useState("");
-  // console.log("hello");
-  // const service = new authService();
-  // console.log(service);
-   const navigate=useNavigate();
-  // useEffect(() => {
-  //   console.log("hello");
-  // }, []);
+  const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     console.log("hello");
     e.preventDefault();
-     authService
-       .login("aya.zeddini@gmail.com", userName, password)
-       .then((res) => {
-         //  console.log(res);
-         console.log(res.user.role);
-         if (res.user.role === "chef") {
-           navigate("/dashboard");
-         } else {
-           <Link to="/" />;
-         }
-       })
-       .catch((err) => {
-         console.log(err);
-       });
-  
+    authService
+      .login(email, userName, password)
+      .then((res) => {
+        console.log(res.user.role);
+        if (res.user.role === "chef") {
+          navigate("/dashboard");
+        } else {
+          navigate("/dashboarduser");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+  const [emailError, setEmailError] = useState("");
+  const validateEmail = (e) => {
+    var email = e.target.value;
+
+    if (validator.isEmail(email)) {
+      setEmailError("Valid Email :)");
+    } else {
+      setEmailError("Enter valid Email!");
+    }
+  };
+
 
   return (
     <div>
-      {/* <GlobalStyles
-                styles={{ body: { background: color } }}
-               
-            /> */}
-
       <img
         className="logo"
         src="https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-logo.png"
         alt="h"
-        // style={{ width:'10%', height:"10%" }}
       />
       <div className="grid-container">
         <div className="item3">
@@ -75,6 +73,27 @@ const Login = () => {
           >
             <FormControl
               // onSubmit={handleSubmit}
+              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
+              variant="outlined"
+            >
+              <InputLabel>E-mail</InputLabel>
+              <OutlinedInput
+                type="text"
+                label="User name"
+                onChange={(e) => {
+                  setEmail(e.target.value), validateEmail(e);
+                }}
+              />
+              <span
+                style={{
+                  fontWeight: "bold",
+                  color: "red",
+                }}
+              >
+                {emailError}
+              </span>
+            </FormControl>
+            <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
@@ -113,11 +132,12 @@ const Login = () => {
               type="submit"
               onClick={handleSubmit}
             >
-              Login
+              Sign In
             </Button>
 
             <Link to="/singin">
-              {/* <Button>JDIO</Button> */}
+
+
               <Button
                 sx={{
                   "&:hover": {
@@ -133,7 +153,9 @@ const Login = () => {
                 }}
                 id="login"
               >
-                SignIn
+
+                Sign Up
+
               </Button>
             </Link>
           </Box>

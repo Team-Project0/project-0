@@ -66,19 +66,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 -- Table `mydb`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
-  `iduser` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NULL DEFAULT NULL,
-  `lastName` VARCHAR(45) NULL DEFAULT NULL,
-  `password` VARCHAR(45) NULL DEFAULT NULL,
-  `profil-photo` VARCHAR(255) NULL DEFAULT NULL,
-  `role` VARCHAR(45) NULL DEFAULT NULL,
-  `userName` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`iduser`),
-  UNIQUE INDEX `userName_UNIQUE` (`userName` ASC) VISIBLE)
-ENGINE = InnoDB
-AUTO_INCREMENT = 13
-DEFAULT CHARACTER SET = utf8mb3;
+
 
 
 -- -----------------------------------------------------
@@ -112,7 +100,7 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-ydb
+
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb3 ;
 USE `mydb` ;
@@ -125,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product` (
   `name` VARCHAR(45) NOT NULL,
   `eday` DATE NOT NULL,
   `quantity` INT NOT NULL,
-  `img` VARCHAR(45) NULL DEFAULT NULL,
+  `img` VARCHAR(500) NULL DEFAULT NULL,
   `price` INT NOT NULL,
   PRIMARY KEY (`idProduct`))
 ENGINE = InnoDB
@@ -193,9 +181,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ingredient` (
   `idingredient` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
   `quantity` INT NULL DEFAULT NULL,
-  `price` VARCHAR(4) NULL DEFAULT NULL,
+
+  `price` INT NULL DEFAULT NULL,
   `edate` DATE NULL DEFAULT NULL,
-  `image` VARCHAR(100) NULL DEFAULT NULL,
+  `image` VARCHAR(500) NULL DEFAULT NULL,
+ 
+
+
+
   PRIMARY KEY (`idingredient`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 7

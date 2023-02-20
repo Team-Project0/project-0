@@ -23,7 +23,7 @@ body{
 }
 
 .chocolate2{
-    margin: 117px -1082px;
+  margin: -40px -1082px;
     z-index: 57;
     width: 130px;
 }
@@ -86,10 +86,72 @@ body{
   margin:-56px 7px;
 }
 .notif_div{
-  background-color: #d1c4e9;
+  background-color: #ffffff;
     width: 86%;
     margin: 150px 61px;
     padding: 14px 28px;
+}
+
+.grid-container14{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: -25px 0px;
+}
+.cacao{
+  width: 30%;
+  margin: 221px 239px;
+  -ms-transform: rotate(20deg);
+  transform: rotate(40deg);
+}
+.milkaw{
+  width: 45%;
+  margin: 233px 186px;
+  -ms-transform: rotate(20deg);
+  transform: rotate(22deg);
+}
+
+.linkcreateProduct{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:67px 7px;
+}
+
+.linkNotifications{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin: 63px 7px;
+}
+.linkIngredient{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:-56px 7px;
+}
+.linkIngredienttt{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:67px 7px;
+}
+.linkAddIngredient{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:66px 7px;
+}
+.linkNotification{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:74px 7px;
 }
 .linkMessages{
   display: flex;
@@ -105,6 +167,13 @@ body{
   border-radius: 30px;
   margin:-61px 7px;
 }
+.linkAddIngredient{
+  display: flex;
+  align-items: cover;
+ 
+  border-radius: 30px;
+  margin:-62px 7px;
+}
 .grid-container1 {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -117,6 +186,26 @@ body{
 
   margin:-25px -11px;
 }
+.grid-container12{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: -25px 0px;
+}
+.imgnotif{
+  width: 49%;
+  margin: 194px 235px;
+}
+.imgproooduct{
+  width:10%
+}
+.grid-container13{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: -25px 0px;
+}
+.grid-container16{display: grid;
+  grid-template-columns: auto auto auto;
+  margin: -25px 0px;}
 .grid-item1 {
  
   padding: 20px;
@@ -138,7 +227,9 @@ body{
 }
 
 .imgtab{
-  width: 10%;
+
+  width:34%;
+
 }
 .quantity{
   color: #7d69ac;
@@ -149,14 +240,14 @@ body{
 }
 .grid-container-product {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-image:url("https://www.milka.com.pl/assets/images/Shapes/master-paper-texture_white.jpg") ;
+  grid-template-columns: repeat(3, 1fr);
+  /* background-image: url(https://www.milka.com.pl/assets/images/Shapes/master-paper-texture_white.jpg); */
   align-items: center;
   justify-content: center;
   padding: 10px;
-  margin:46px 74px;
-  width: 100%;
-  margin: 0px 0px;
+  margin: 46px 74px;
+  width: 78%;
+  margin: 57px 88px;
 
 }
 .grid-container-product1 {
@@ -175,9 +266,8 @@ body{
   background-image:url("https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-mountains-mobile.384df1a4.jpg");
 }
 .imgcow{
-  width:12%;
-  margin:0px 0px;
-
+  width: 70%;
+  margin: 181px 80px;
 }
 .imgtablette{
   margin: 50px 169px;
@@ -207,6 +297,7 @@ body{
   display: flex;
   flex-wrap: wrap;
 }
+
 .list-product1 {
   min-height: 350px;
   margin: 23px 2px 17px 135px;
@@ -217,6 +308,32 @@ body{
   padding: 32px 106px 0px 50px;
   box-shadow: 0 0 1em #80808066;
   width: 304px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-product2 {
+  min-height: 350px;
+  margin: 128px 2px 17px 147px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 35px 0px 65px 27px;
+  box-shadow: 0 0 1em #80808066;
+  width: 429px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-product3 {
+  min-height: 350px;
+  margin: 146px 2px 17px 147px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 35px 0px 65px 27px;
+  box-shadow: 0 0 1em #80808066;
+  width: 429px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -231,6 +348,9 @@ body{
   align-items: cover;
  
   border-radius: 30px;
-  margin:74px 7px;
+
+  margin:-61px 7px;
+
+
 
 }

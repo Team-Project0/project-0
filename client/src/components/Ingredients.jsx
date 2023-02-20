@@ -14,6 +14,7 @@ import Paper from "@mui/material/Paper";
 import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
 import { useState } from "react";
+import moment from 'moment/moment';
 
 const Ingredients = ({ data,show,setShow }) => {
 
@@ -21,18 +22,20 @@ const Ingredients = ({ data,show,setShow }) => {
     axios
       .delete(`http://localhost:3000/api/delete/${data[0].idingredient}`)
       .then((res) => {
-        setShow(!show);
+       
         console.log(res);
       })
       .catch((err) => console.error(err));
   };
   return (
     <div>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <TableContainer sx={{width:"73%",padding:" 0px 31px",
+    margin:" 85px 163px"}} component={Paper}>
+        <Table sx={{ minWidth:"79%",margin:" 12px 0px",
+    padding: "27px 3px"}} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <TableCell>id</TableCell>
+            
               <TableCell align="center">Name</TableCell>
               <TableCell align="center">Quantity</TableCell>
               <TableCell align="center">Price</TableCell>
@@ -44,15 +47,13 @@ const Ingredients = ({ data,show,setShow }) => {
           <TableBody>
             {data.map((el) => (
               <TableRow>
-                <TableCell component="th" scope="row">
-                  {/* {el.iduser} */}h
-                </TableCell>
+                
                 <TableCell align="center">{el.name}</TableCell>
                 <TableCell align="center">{el.quantity}</TableCell>
                 <TableCell align="center">{el.price}</TableCell>
-                <TableCell align="center">{el.edate}</TableCell>
+                <TableCell align="center">  {moment(el.edate).fromNow() }</TableCell>
                 <TableCell align="center">
-                  <img class="imgtab" src={el.image} />
+                  <img className="imgtab" src={el.image} />
                 </TableCell>
                 <TableCell align="center">
                   <IconButton color="primary" aria-label="delete" size="small">

@@ -30,8 +30,9 @@ router.get('/', middleware.authenticateToken);
 router.post('/token', itemController.createToken);
  router.post("/sendNotification", itemController.sendNotification);
  router.get("/getNotification", itemController.getNotification);
+ router.delete("/DeleteNotif/:idnotification", itemController.DeleteNotif);
 
-
+ router.delete("/DeleteProduct/:idProduct", itemController.DeleteProduct);
  
 
 module.exports = router;
