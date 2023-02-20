@@ -63,12 +63,14 @@ const createAccount = async function (req, res) {
     console.log(req.body);
     //saving hashed password in our database
     e_mail=req.body.e_mail
+
     firstName=req.body.firstName
     lastName=req.body.lastName
     password=req.body.password
     profilphoto=req.body.profil_photo
     role=req.body.role
     userName=req.body.userName
+
       try {
           const selected = "SELECT * FROM user WHERE userName=?;"
         values = userName
@@ -79,9 +81,11 @@ const createAccount = async function (req, res) {
             res.status(409).send('user name already used');
         }
           else {
+
               const add = "INSERT INTO user (e_mail,firstName,lastName,password,profil_photo,role,userName) VALUES (?,?,?,?,?,?,?);";
               const hashedPw = await bcrypt.hash(password, 10);
               const values=[e_mail,firstName,lastName,hashedPw,profilphoto,role,userName]
+
              const user= await  db.promise().query(add, values)
              console.log("hope",user)
             res.status(200).send(user);
@@ -138,6 +142,7 @@ const login = async function (req, res) {
 }
 
 
+
 // const createProduct = (req, res) => {
 //   const sql = "INSERT INTO product SET ?";
 //   db.query(sql, { ...req.body }, (err, items, fields) => {
@@ -156,6 +161,7 @@ const createProduct = function (req, res) {
   } catch (err) {
     console.log(err);
   }
+
 };
 const sendNotification = (req, res) => {
   const sql = "INSERT INTO notification SET ?";
@@ -246,7 +252,9 @@ const getPriceProduct = function (req, res) {
 
 
 module.exports = {selectAllUsers,createProduct,DeleteUser,getProduct, getPriceProduct,login,createToken,
+
 createAccount,selectAllUsers,DeleteUser,selectAllIngredient,addIingredient,updateIngredient,deleteIngredient,
 sendNotification,getNotification,DeleteNotif,DeleteProduct};
+
 
 

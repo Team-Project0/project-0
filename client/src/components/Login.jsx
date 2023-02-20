@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { deepPurple } from "@mui/material/colors";
 import Box from "@mui/material/Box";
+
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import authService from "../services/auth.js";
+
 import validator from "validator";
 
 const color = deepPurple[400];
@@ -46,6 +49,7 @@ const Login = () => {
     }
   };
 
+
   return (
     <div>
       <img
@@ -68,6 +72,7 @@ const Login = () => {
             }}
           >
             <FormControl
+              // onSubmit={handleSubmit}
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
@@ -131,6 +136,8 @@ const Login = () => {
             </Button>
 
             <Link to="/singin">
+
+
               <Button
                 sx={{
                   "&:hover": {
@@ -146,7 +153,9 @@ const Login = () => {
                 }}
                 id="login"
               >
+
                 Sign Up
+
               </Button>
             </Link>
           </Box>

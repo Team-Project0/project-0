@@ -27,14 +27,17 @@ class AuthService {
 
   register(userName, password, firstName, lastName, profil_photo, role, e_mail) {
     return axios.post(`http://localhost:3000/api/signUp`, {
+
       userName,
       e_mail,
       password,
       firstName,
       lastName,
+
       profil_photo,
       role,
     }).then((res)=>{return res.data});
+
   }
 
   getCurrentUser() {

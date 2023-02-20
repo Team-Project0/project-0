@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+
 import Formulaire from "./components/Formulaire.jsx";
 import Login from "./components/login.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,6 +12,7 @@ import SideBardashboarduser from "./components/SideBardashboarduser.jsx";
 const App = () => {
   const [items, setItems] = useState([]);
 
+
   useEffect(() => {
     axios.get("http://localhost:3000/api/getProduct").then((res) => {
       setItems(res.data);
@@ -21,6 +23,7 @@ const App = () => {
 
   return (
     <div>
+
       <Routes>
         <Route path="/" element={<Login />} />
 
@@ -28,13 +31,17 @@ const App = () => {
         <Route exact path="/dashboard" element={<SideBarDashboard />} />
 
         <Route path="/dashboarduser" element={<SideBardashboarduser />} />
+
       </Routes>
     </div>
   );
 };
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("app")
-);
+
+// ReactDOM.render(
+//   <BrowserRouter>
+//     <App />
+//   </BrowserRouter>,
+//   document.getElementById("app")
+// );
+
+

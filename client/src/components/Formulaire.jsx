@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { Button } from "@mui/material";
 import axios from "axios";
+
 import AuthService from "../services/auth";
 import { useNavigate } from "react-router-dom";
 import validator from "validator";
@@ -10,7 +11,10 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+
 import { Link } from "react-router-dom";
+import AuthService from "../services/auth";
+import { useNavigate } from "react-router-dom";
 
 const Formulaire = () => {
   const [firstName, setFirstName] = useState("");
@@ -19,6 +23,7 @@ const Formulaire = () => {
   const [photoProfil, setPhotoProfil] = useState("");
   const [role, setRole] = useState("");
   const [userName, setUserName] = useState("");
+
   const [email, setemail] = useState("");
   const navigate = useNavigate();
   const [emailError, setEmailError] = useState("");
@@ -32,6 +37,7 @@ const Formulaire = () => {
     }
   };
   const [errorMessage, setErrorMessage] = useState("");
+
 
   const validate = (value) => {
     if (
@@ -53,11 +59,13 @@ const Formulaire = () => {
     const formData = new FormData();
     console.log("formData : ", formData);
 
-    formData.append("file", f);
 
-    formData.append("upload_preset", "olrhqnut");
+      formData.append("file", f);
 
-    console.log("form after appending:1 ", formData);
+      formData.append("upload_preset", "olrhqnut");
+
+      console.log("form after appending:1 ", formData);
+
 
     axios
       .post("https://api.cloudinary.com/v1_1/dqhndevvq/image/upload", formData)
@@ -264,5 +272,6 @@ const Formulaire = () => {
     </div>
   );
 };
+
 
 export default Formulaire;

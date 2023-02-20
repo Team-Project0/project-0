@@ -181,10 +181,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ingredient` (
   `idingredient` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
   `quantity` INT NULL DEFAULT NULL,
+
   `price` INT NULL DEFAULT NULL,
   `edate` DATE NULL DEFAULT NULL,
   `image` VARCHAR(500) NULL DEFAULT NULL,
  
+
 
 
   PRIMARY KEY (`idingredient`))

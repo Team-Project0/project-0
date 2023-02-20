@@ -8,19 +8,23 @@ import {
   LinearScale,
   PointElement,
   registerables,
+
   ChartConfiguration,
   LineController,
   LineElement,
 } from "chart.js";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
+
   LineController,
   LineElement,
   PointElement,
   ...registerables
 );
+
 const ChartLine = () => {
   const [chartData, setChartData] = useState({ labels: [], data: [] });
   const [eday, setDay] = useState([]);
@@ -37,9 +41,11 @@ const ChartLine = () => {
       for (const dataObj of result.data) {
         data.push(parseInt(dataObj.eday));
         labels.push(parseInt(dataObj.price));
+
       }
       console.log("filtred data", labels, data);
       setChartData({ labels: labels, data: data });
+
     } catch (err) {
       console.log(err);
     }
@@ -61,6 +67,7 @@ const ChartLine = () => {
     responsive: true,
     title: { text: "Product", display: true },
     scales: {
+
       yAxes: [
         {
           min: 1,
@@ -76,6 +83,7 @@ const ChartLine = () => {
       ],
     },
   };
+
   return (
     <div>
       <Box
