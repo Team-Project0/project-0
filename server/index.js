@@ -1,16 +1,22 @@
 const express = require("express");
 const itemRoutes = require('./routes/item.routes')
+const jwt = require("jsonwebtoken");
 
-// TODO: Update this
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
+const cors=require("cors")
+
  const db = require('./database-mysql');
-// const db = require('./database-mongo');
+
 
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
+console.log(process.env.ACCESS_TOKEN_SECRET);
 const PORT = process.env.PORT || 3000
 
 
 app.use(express.json());
+app.use(cors())
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/dist"));
 

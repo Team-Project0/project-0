@@ -30,6 +30,6 @@ bower_components/
 package-lock.json
 # Floobits
 .floo
-.floobit
+.floobit  
 .floo
 .flooignore

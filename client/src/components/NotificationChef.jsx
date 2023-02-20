@@ -25,9 +25,8 @@ const NotificationChef = () => {
   }
   return (
     <div >
-   
-       {/* <img src="https://www.milka.it/-/media/Project/Brands/Milka/it/2022-2023/I00068S01BANMILKA_TAVLATTE_780x480px.png?h=480&w=780&hash=9C9F37EA476F32AD8C968E303464F2A9"/> */}
-       <img className='imgcow' src="https://www.milka.it/-/media/Project/Brands/Milka/it/Home-Page/lilac-heritage-DESK.png?h=599&w=893&hash=615C3CF7581F64324C02A737405CCC47"/>
+          <div  className="grid-container12">
+       
         <Card sx={{ maxWidth: 345,marginTop: 20,
               marginLeft:19,
               display: "flex",
@@ -36,12 +35,14 @@ const NotificationChef = () => {
               bgcolor:"background.default",
               borderRadius: 1,
               padding: 4,
-              boxShadow:4, }}>
+              boxShadow:4,
+              }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="https://www.milka.com/content/dam/mondelezwoop/milka/chunk-1.png"
+          width="70%"
+          margin="0px 26px"
+          image="https://i.pinimg.com/564x/c4/6c/df/c46cdf93bcf5f19f11c05a0ae80a8aac.jpg"
           alt="green iguana"
         />
         <CardContent>
@@ -88,13 +89,11 @@ const NotificationChef = () => {
    </Stack>
         
       </CardActions>
-      {/* <img className='imgm' src="https://cdn.bmstores.co.uk/images/hpcProductImage/imgSource/377411-milka-daim-snax-145g.jpg"/> */}
     
     </Card>
-    {/* <img src="https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-mountains-mobile.384df1a4.jpg"/> */}
-
+    <img className='imgcow' src="https://www.milka.it/-/media/Project/Brands/Milka/it/Home-Page/lilac-heritage-DESK.png?h=599&w=893&hash=615C3CF7581F64324C02A737405CCC47"/>
     
-    </div>
+    </div></div>
   )
 }
 
