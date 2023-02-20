@@ -227,7 +227,9 @@ body{
 }
 
 .imgtab{
+
   width:34%;
+
 }
 .quantity{
   color: #7d69ac;
@@ -346,5 +348,9 @@ body{
   align-items: cover;
  
   border-radius: 30px;
+
   margin:-61px 7px;
+
+
+
 }
