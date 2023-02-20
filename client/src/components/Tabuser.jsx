@@ -29,8 +29,10 @@ const Tabuser = (props) => {
     }
   return (
     <div>
-      <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <TableContainer sx={{width:"73%",padding:" 0px 31px",
+    margin:" 85px 163px"}} component={Paper}>
+      <Table sx={{minWidth:"79%",margin:" 12px 0px",
+    padding: "27px 3px"}} aria-label="customized table">
         <TableHead>
           <TableRow>
             <TableCell>id</TableCell>

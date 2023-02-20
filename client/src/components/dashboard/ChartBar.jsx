@@ -12,21 +12,16 @@ import {
 } from "chart.js";
 
 import { height } from "@mui/system";
-ChartJS.register(
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-);
+ChartJS.register(BarElement, CategoryScale, LinearScale, PointElement);
 
 const ChartBar = () => {
-  const [chartData, setChartData] = useState({labels:[],data:[]});
+  const [chartData, setChartData] = useState({ labels: [], data: [] });
 
   const [eday, setDay] = useState([]);
   const [price, setPrice] = useState([]);
-    useEffect(() => {
-      fetchingData();
-    }, []);
+  useEffect(() => {
+    fetchingData();
+  }, []);
   const fetchingData = async function () {
     let labels = [];
     let data = [];
@@ -44,23 +39,7 @@ const ChartBar = () => {
 
       // console.log(result);
       console.log("filtred data", labels, data);
-   setChartData({labels:labels,data:data})
-
-      // for (const dataObj of result.data) {
-      //   prodDay.push(parseInt(dataObj.eday));
-      //   prodPrice.push(parseInt(dataObj.price));
-      // }
-      // setChartData({
-      //   labels: prodDay,
-      //   datasets: [
-      //     {
-      //       label: "level of price",
-      //       data:prodPrice,
-      //       backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-      //       borderWidth: 4,
-      //     },
-      //   ],
-      // });
+      setChartData({ labels: labels, data: data });
     } catch (err) {
       console.log(err);
     }
@@ -74,7 +53,7 @@ const ChartBar = () => {
         data: chartData.data,
         backgroundColor: ["rgba(75, 192, 192, 0.6)"],
         borderWidth: 4,
-        tension:1
+        tension: 1,
       },
     ],
   };
@@ -83,20 +62,11 @@ const ChartBar = () => {
     responsive: true,
     title: { text: "Product", display: true },
     scales: {
-      yAxes: [   {
-        min: 3,
-        max:9
-      }
-        // {
-        //   ticks: {
-        //     autoSkip: true,
-        //     maxTicksLimit: 10,
-        //     beginAtZero: true,
-        //   },
-        //   gridLines: {
-        //     display: false,
-        //   },
-        // },
+      yAxes: [
+        {
+          min: 3,
+          max: 9,
+        },
       ],
       xAxes: [
         {
@@ -110,20 +80,19 @@ const ChartBar = () => {
 
   return (
     <div>
-       <Box
-            sx={{
-              marginTop:40,
-              marginLeft: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              bgcolor: "#ede7f6",
-              borderRadius: 1,
-              padding: 4,
-            }}
-          >
-           
-      <Line data={config} options={options} />
+      <Box
+        sx={{
+          marginTop: 40,
+          marginLeft: 4,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          bgcolor: "#ede7f6",
+          borderRadius: 1,
+          padding: 4,
+        }}
+      >
+        <Line data={config} options={options} />
       </Box>
     </div>
   );

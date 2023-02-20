@@ -1,47 +1,60 @@
-import React,{useState}from "react";
-
- import {useNavigate}from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { deepPurple } from "@mui/material/colors";
-import { GlobalStyles } from "@mui/styled-engine";
 import Box from "@mui/material/Box";
-import { ImageList } from "@mui/material";
-import { sizing } from "@mui/system";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import authService from "../services/auth.js";
+import validator from "validator";
+
 const color = deepPurple[400];
 const Login = () => {
   const [password, setPassword] = useState("");
- 
   const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
 
- 
+  const navigate = useNavigate();
 
-const navigate=useNavigate();
-// window.location.reload()
+  const handleSubmit = (e) => {
+    console.log("hello");
+    e.preventDefault();
+    authService
+      .login(email, userName, password)
+      .then((res) => {
+        console.log(res.user.role);
+        if (res.user.role === "chef") {
+          navigate("/dashboard");
+        } else {
+          navigate("/dashboarduser");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const [emailError, setEmailError] = useState("");
+  const validateEmail = (e) => {
+    var email = e.target.value;
 
-// const handleSubmit = ()=> {
+    if (validator.isEmail(email)) {
+      setEmailError("Valid Email :)");
+    } else {
+      setEmailError("Enter valid Email!");
+    }
+  };
 
-// navigate('/dashboard');
-
-// };
   return (
     <div>
-      {/* <GlobalStyles
-                styles={{ body: { background: color } }}
-               
-            /> */}
-
       <img
-        class="logo"
+        className="logo"
         src="https://www.milka.com/etc.clientlibs/mdlz-common/clientlibs/clientlib-milka-redesign/resources/static/images/milka-logo.png"
         alt="h"
-        // style={{ width:'10%', height:"10%" }}
       />
-      <div class="grid-container">
-        <div class="item3">
+      <div className="grid-container">
+        <div className="item3">
           <Box
             sx={{
               marginTop: 20,
@@ -58,17 +71,45 @@ const navigate=useNavigate();
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
+              <InputLabel>E-mail</InputLabel>
+              <OutlinedInput
+                type="text"
+                label="User name"
+                onChange={(e) => {
+                  setEmail(e.target.value), validateEmail(e);
+                }}
+              />
+              <span
+                style={{
+                  fontWeight: "bold",
+                  color: "red",
+                }}
+              >
+                {emailError}
+              </span>
+            </FormControl>
+            <FormControl
+              sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
+              variant="outlined"
+            >
               <InputLabel>User name</InputLabel>
-              <OutlinedInput type="text" label="User name" onChange={(e)=>setUserName(e.target.value)} />
+              <OutlinedInput
+                type="text"
+                label="User name"
+                onChange={(e) => setUserName(e.target.value)}
+              />
             </FormControl>
             <FormControl
               sx={{ m: 1, zIndex: "center", width: "25ch", position: "center" }}
               variant="outlined"
             >
               <InputLabel>Password</InputLabel>
-              <OutlinedInput type="Password" label="Password" onChange={(e)=>setPassword(e.target.value)} />
+              <OutlinedInput
+                type="Password"
+                label="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </FormControl>
-            {/* <Link to="/dashboard"> */}
             <Button
               sx={{
                 "&:hover": {
@@ -83,42 +124,42 @@ const navigate=useNavigate();
                 color: "#fff",
               }}
               id="login"
-              onClick={()=>{navigate("/dashboard")}}
-              
+              type="submit"
+              onClick={handleSubmit}
             >
-              Login
+              Sign In
             </Button>
-            {/* </Link> */}
+
             <Link to="/singin">
-            <Button
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#3a2774",
-                  borderColor: "#0062cc",
-                  boxShadow: "none",
-                },
-                borderRadius: 1,
-                mt: 3,
-                mb: 2,
-                bgcolor: deepPurple[400],
-                color: "#fff",
-              }}
-              id="login"
-            >
-              SignIn
-            </Button>
+              <Button
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#3a2774",
+                    borderColor: "#0062cc",
+                    boxShadow: "none",
+                  },
+                  borderRadius: 1,
+                  mt: 3,
+                  mb: 2,
+                  bgcolor: deepPurple[400],
+                  color: "#fff",
+                }}
+                id="login"
+              >
+                Sign Up
+              </Button>
             </Link>
           </Box>
         </div>
-        <div class="item4">
+        <div className="item4">
           {" "}
           <img
-            class="rotation"
+            className="rotation"
             src="https://www.milka.com/content/dam/mondelezwoop/milka/milka-chocolate.png"
           />
         </div>
         <img
-          class="chocolate2"
+          className="chocolate2"
           src="https://www.milka.com/content/dam/mondelezwoop/milka/chunk-2.png"
         />
       </div>

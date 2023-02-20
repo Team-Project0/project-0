@@ -32,7 +32,6 @@ const Product1 = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-        {/* {props.data.map((el) => ( */}
           
             <TableRow>
               <TableCell component="th" scope="row">
